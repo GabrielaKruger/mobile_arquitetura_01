@@ -19,8 +19,7 @@ class ProductRepositoryImpl implements ProductRepository {
 
       return models
           .map((m) => Product(
-                id: m.id
-                    .toString(), //toString() para manter a consistência com o id vindo do remote
+                id: m.id.toString(),
                 title: m.title,
                 price: m.price,
                 image: m.image,

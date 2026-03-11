@@ -9,7 +9,6 @@ class ProductModel {
     required this.title,
     required this.price,
     required this.image,
-  
   });
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {

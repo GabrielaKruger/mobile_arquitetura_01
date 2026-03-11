@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import '../../domain/repositories/product_repository.dart';
 import 'product_state.dart';
-import '../../../domain/repositories/product_repository.dart';
 
 class ProductViewModel {
   final ProductRepository repository;
@@ -10,9 +10,11 @@ class ProductViewModel {
   ProductViewModel(this.repository);
 
   Future<void> loadProducts() async {
-    state.value = state.value.copyWith(isLoading: true);
+    state.value = state.value.copyWith(isLoading: true, error: null);
+
     try {
       final products = await repository.getProducts();
+
       state.value = state.value.copyWith(
         isLoading: false,
         products: products,

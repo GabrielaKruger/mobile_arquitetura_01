@@ -3,7 +3,7 @@ import 'package:http/http.dart' as http;
 import 'package:mobile_arquitetura_01/presentation/viewmodels/product_viewmodel.dart';
 import 'data/datasources/product_cache_datasource.dart';
 import 'data/datasources/product_remote_datasource.dart';
-import 'data/repositories/product_repository_imp.dart';
+import 'data/repositories/product_repository_impl.dart';
 import 'presentation/pages/product_page.dart';
 
 void main() {

@@ -1,4 +1,4 @@
-import '../../../domain/entities/product.dart';
+import '../../domain/entities/product.dart';
 
 class ProductState {
   final bool isLoading;
@@ -11,7 +11,7 @@ class ProductState {
     this.error,
   });
 
-  ProductState copyWith ({
+  ProductState copyWith({
     bool? isLoading,
     List<Product>? products,
     String? error,
