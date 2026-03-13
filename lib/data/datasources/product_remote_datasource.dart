@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:mobile_arquitetura_01/data/models/product_model.dart';
+import 'package:product_app/data/models/product_model.dart';
 
 class ProductRemoteDatasource {
   final http.Client client;

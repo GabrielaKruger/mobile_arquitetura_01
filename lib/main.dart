@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:http/http.dart' as http;
-import 'package:mobile_arquitetura_01/presentation/viewmodels/product_viewmodel.dart';
-import 'data/datasources/product_cache_datasource.dart';
-import 'data/datasources/product_remote_datasource.dart';
-import 'data/repositories/product_repository_impl.dart';
-import 'presentation/pages/product_page.dart';
+import 'package:product_app/data/datasources/product_cache_datasource.dart';
+import 'package:product_app/data/datasources/product_remote_datasource.dart';
+import 'package:product_app/data/repositories/product_repository_impl.dart';
+import 'package:product_app/presentation/pages/product_page.dart';
+import 'package:product_app/presentation/viewmodels/product_viewmodel.dart';
 
 void main() {
   final cache = ProductCacheDatasource();
@@ -12,7 +13,7 @@ void main() {
   final repository = ProductRepositoryImpl(remote, cache);
   final viewModel = ProductViewModel(repository);
 
-  runApp(MyApp(viewModel: viewModel));
+  runApp(ProviderScope(child: MyApp(viewModel: viewModel)));
 }
 
 class MyApp extends StatelessWidget {
